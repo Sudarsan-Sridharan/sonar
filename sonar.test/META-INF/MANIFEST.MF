@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Test
+Bundle-SymbolicName: sonar.test
+Bundle-Version: 1.0.0
+Export-Package: sonar.test
+Import-Package: sonar.core,
+ sonar.core.annotations,
+ sonar.core.extender,
+ sonar.core.service
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+X-SONAR-AUTOSCAN: allow

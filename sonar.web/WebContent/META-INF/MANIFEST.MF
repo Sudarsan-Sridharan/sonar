@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Web
+Bundle-SymbolicName: sonar.web
+Bundle-Version: 1.0.0
+Import-Package: org.osgi.framework;version="1.6.0",
+ sonar.core,
+ sonar.core.service,
+ javax.websocket,
+ javax.websocket.server
+Web-ContextPath: /test
+X-Socket-Path: /socket
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: WEB-INF/classes

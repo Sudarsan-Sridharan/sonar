@@ -1,0 +1,54 @@
+<html>
+    <head>
+    <title>Console</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+body {
+	height: 100%;
+	width: 100%;
+    padding: 0;
+    margin: 0;
+	}
+
+</style>
+<script src="Scripts/websocket.js"></script>
+<script src="Scripts/contentpresenter.js"></script>
+
+<script>
+var components = [];
+var presenter = new ContentPresenter();
+presenter.preProcessComponents(components);
+
+function loadComplete()
+{
+	//return;
+	socketClient.onconnected = oninitapp;
+	socketClient.connect();
+};
+function unloadComplete()
+{
+	//return;
+	socketClient.disconnect();
+	socketClient.onconnected = null;
+};
+
+function oninitapp()
+{
+	alert('init');
+	var evt = {eventHandler : initapploaded, param : null};
+	socketClient.sendCommand("LoadComponent", "sonar.test.SampleModel", evt);
+}
+
+function initapploaded(data, param)
+{
+	alert('Received');
+}
+
+
+</script>
+</head>
+<body onload="loadComplete()" onunload="unloadComplete()">
+
+
+</body>
+</html>

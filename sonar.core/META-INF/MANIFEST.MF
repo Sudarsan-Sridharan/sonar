@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Core
+Bundle-SymbolicName: sonar.core
+Bundle-Version: 1.0.0
+Export-Package: sonar.core,
+ sonar.core.annotations,
+ sonar.core.extender,
+ sonar.core.service
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Service-Component: META-INF/OSGI-INF/ModelStorageService.xml,META-INF/OSGI-INF/CommandStorageService.xml
+Import-Package: com.google.gson,
+ org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Bundle-Activator: sonar.core.internal.Activator
+X-SONAR-AUTOSCAN: allow
